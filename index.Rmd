@@ -1,5 +1,5 @@
 ---
-title: "Banovic Lab"
+title: "Banovic Labs"
 output: 
   html_document
 ---
