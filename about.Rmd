@@ -1,5 +1,5 @@
 ---
-title: "Members of Banovic Lab"
+title: "About"
 output: html_document
 ---
 

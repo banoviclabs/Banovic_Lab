@@ -13,6 +13,8 @@ Thank you for visiting Banovic Labs. Our website is currently under construction
 
 8/30/2019
 
+[About Our Lab Team](https://banoviclabs.github.io/Banovic_Lab/about.html)
+
 ```{r welcome}
 knitr::opts_chunk$set(echo = FALSE)
 ```
