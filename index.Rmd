@@ -1,8 +1,7 @@
 ---
 title: "Banovic Lab"
-author: "Amanda Blubaugh"
-date: "8/30/2019"
 output: html_document
+theme: cayman
 ---
 
 
@@ -10,9 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Banovic Lab
+Thank you for visiting Banovic Labs. Our website is currently under construction.  Please come back soon!
 
-Thank you for visiting Banovic Labs
+8/30/2019
 
 ```{r welcome}
 knitr::opts_chunk$set(echo = FALSE)
