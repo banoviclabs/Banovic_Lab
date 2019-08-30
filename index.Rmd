@@ -1,11 +1,7 @@
 ---
 title: "Banovic Lab"
 output: 
-  html_document:
-    toc: true
-    toc_float:
-      smooth_scroll: true
-      collapsed: false
+  html_document
 ---
 
 
