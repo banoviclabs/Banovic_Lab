@@ -9,7 +9,15 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Thank you for visiting Banovic Labs Website. Our website is currently under construction.  Please come back soon! We are hoping to have the page ready in early September!
+Thank you for visiting Banovic Labs Website: a research lab in the Small Animal Medicine and Surgery (SAMS) department of the University of Georgia (UGA).
+
+Our lab focuses on dermatological studies for **many** species, from murine to equine, feline, canine, and including human. 
+
+Frequently dermatologically, and often immunologically, diseases present with phenotypical _and_ cellular molecular similarity. This is especially true concerning mammals, as they  have evolved similarly over time and will have a higher rate of conserved molecular pathways. Translational medicine between species allows multiple animals to benefit from further understanding of certain diseases.
+
+This lab examines dermatological diseases and the immunological pathways stimulating inflammation, itch, and especially: the core molecular pathways of the specific disease in the immune system that allows symptomatic flare ups and issues to become chronic in their nature. We do this using a number of techniques that we discuss on the laboratory techniques page.
+
+Our website is currently under construction; please excuse the mess. ~Last updated 8/30/2019~
 
 
 ```{r welcome}
