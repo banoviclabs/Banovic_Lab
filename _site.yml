@@ -2,7 +2,7 @@ name: "Banovic Lab"
 output_dir: 'docs'
 output:
   html_document:
-    theme: united
+    theme: lumen
     highlight: espresso
     toc: true
     toc_depth: 2
