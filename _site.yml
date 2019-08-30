@@ -13,7 +13,7 @@ navbar:
 output:
   html_document:
     theme: tango
-    highlight: espresso
+    highlight: none
     toc: true
     toc_depth: 2
     toc_float: 
