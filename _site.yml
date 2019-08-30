@@ -1,5 +1,12 @@
 name: "Banovic Lab"
 output_dir: 'docs'
+navbar:
+  title: "Banovic Lab"
+  left:
+    -text: "Home"
+     href: index.html
+    -text: "About"
+     href: about.html
 output:
   html_document:
     theme: lumen
@@ -8,4 +15,5 @@ output:
     toc_depth: 2
     toc_float: 
       collapsed: true
+    toc: true
     css: styles.css
