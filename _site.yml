@@ -1,5 +1,14 @@
 name: "Banovic Lab"
 output_dir: 'docs'
+ouput:
+  html_document:
+    theme: tango
+    highlight: default
+    toc: true
+    toc_depth: 2
+    toc_float: 
+      collapsed: false
+
 
 navbar:
   title: "Banovic Lab"
@@ -9,12 +18,3 @@ navbar:
       href: 'index.html'
     - text: "About"
       href: 'about.html'
-
-output:
-  html_document:
-    theme: tango
-    highlight: none
-    toc: true
-    toc_depth: 2
-    toc_float: 
-      collapsed: false

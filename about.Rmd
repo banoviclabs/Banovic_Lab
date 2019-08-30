@@ -1,19 +1,20 @@
 ---
 title: "About"
 output: 
-  html_document:
-    theme: espresso
+  html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Our Lab Team
+# Our Lab Team
   Dr. Frane Banovic
+  
   Tara Denley
+  
   Amanda Blubaugh
+  
   Ileia Sheibe
 
-## Contributors
-
+# Contributors
