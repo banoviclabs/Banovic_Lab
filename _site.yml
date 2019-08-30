@@ -6,9 +6,9 @@ navbar:
   type: inverse
   left:
     - text: "Home"
-      href: index.html
+      href: 'index.html'
     - text: "About"
-      href: about.html
+      href: 'about.html'
 
 output:
   html_document:
@@ -17,4 +17,4 @@ output:
     toc: true
     toc_depth: 2
     toc_float: 
-      collapsed: true
+      collapsed: false
