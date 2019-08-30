@@ -1,0 +1,11 @@
+name: "Banovic Lab"
+output_dir: 'docs'
+output:
+  html_document:
+    theme: united
+    highlight: espresso
+    toc: true
+    toc_depth: 2
+    toc_float: 
+      collapsed: true
+    css: styles.css
