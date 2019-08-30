@@ -12,7 +12,7 @@ navbar:
 
 output:
   html_document:
-    theme: lumen
+    theme: journal
     highlight: espresso
     toc: true
     toc_depth: 2
