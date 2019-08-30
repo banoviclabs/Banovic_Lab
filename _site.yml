@@ -12,7 +12,7 @@ navbar:
 
 output:
   html_document:
-    theme: zenburn
+    theme: tango
     highlight: espresso
     toc: true
     toc_depth: 2
