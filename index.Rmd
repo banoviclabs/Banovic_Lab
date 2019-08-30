@@ -9,7 +9,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Thank you for visiting Banovic Labs. Our website is currently under construction.  Please come back soon! We are hoping to have the page ready in early September!
+Thank you for visiting Banovic Labs. Our website is currently under construction.  Please come back soon! We are hoping to have the page ready in early September
 
 8/30/2019
 
