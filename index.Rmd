@@ -2,8 +2,6 @@
 title: "Banovic Lab"
 output: 
   html_document:
-    theme: yeti
-    highlight: espresso
     toc: true
     toc_float:
       smooth_scroll: true
