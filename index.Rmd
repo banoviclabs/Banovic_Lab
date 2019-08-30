@@ -7,13 +7,13 @@ output: html_document
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Banovic Lab
 
 Thank you for visiting Banovic Labs
 
-```{r cars}
-summary(cars)
+```{r welcome}
+knitr::opts_chunk$set(echo = FALSE)
 ```
