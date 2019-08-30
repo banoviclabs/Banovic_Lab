@@ -1,5 +1,6 @@
 name: "Banovic Lab"
 output_dir: 'docs'
+
 output:
   html_document:
     theme: lumen
