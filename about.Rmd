@@ -9,12 +9,47 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Our Lab Team
-  Dr. Frane Banovic
-  
-  Tara Denley
-  
-  Amanda Blubaugh
-  
-  Ileia Sheibe
 
-## Contributors
+### Dr. Frane Banovic
+  DVM, PhD, Diplomate ECVD
+  Assistant Professor
+  
+##### **Research Interests**
+  Canine atopic dermatitis and pathogenesis of staphylococal pyoderma
+  Canine skin adverse hypersensitivity reactions(toxic epidermal necrolysis)
+  Autoimmune skin diseases- cutaneous lupus erythematosus in dogs
+  
+##### **Educational Background**
+  DVM, University of Zagreb, Croatia, 2008
+PhD in Microbiology, University of Zagreb, 2008-2014
+Small Animal Rotating Internship, Ludwig-Maximillian University, Munich, Germany, 2010-2011
+Investigative Dermatology Residency, North Carolina State University, 2011-2014
+Fellowship in Investigative Dermatology, 2014-2015
+Assistant Professor, Dermatology, University of Georgia, July 2015-present
+  
+##### **Selected Publications**
+Banovic F, Olivry T, Bazzle L, Tobias JR, Atlee B, Zabel S, Okunaka N and Linder KE. Clinical and Microscopic Characteristics of Canine Toxic Epidermal Necrolysis. Veterinary Pathology 2015; 25:321-330.
+
+Olivry T, Rossi MA, Banovic F and Linder KE. Mucocutaneous lupus erythematosus in dogs (21 cases). Veterinary Dermatology 2015; 26: 256–e55.
+
+Banovic F, Lemo N. In vitro evaluation of the use of diluted sodium hypochlorite (bleach) against Staphylococcus pseudintermedius, Pseudomonas aeruginosa and Malassezia pachydermatis. Veterinary Dermatology 2014; 25: 233-4.
+
+Banovic F, Olivry T, Linder KE. Ciclosporin Therapy for Generalized Canine Discoid Lupus Erythematosus Refractory to Doxycycline and Niacinamide. Veterinary Dermatology 2014; 25: 483-e79.
+
+Banovic F, Linder K, Boone A, Jennings S, Murphy KM. Cat scratch-induced Pasteurella multocida necrotizing cellulitis in a dog. Veterinary Dermatology 2013; 24: 463-e108.
+
+Banovic F, Koch S, Robson D, Jacob M, Olivry T. Deep pyoderma caused by Burkholderia cepacia complex in dogs treated with oral ciclosporin. Veterinary Dermatology 2015; 26: 287-e64.
+
+
+
+
+
+### Tara Denley
+
+### Amanda Blubaugh
+  
+### Ileia Sheibe
+
+### Contributors
+
+Our website is currently under construction; please excuse the mess. _~last updated 8/30/2019~_

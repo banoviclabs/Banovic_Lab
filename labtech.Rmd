@@ -1,0 +1,29 @@
+---
+title: "Laboratory Techniques"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## RNA Isolation
+
+### Tissue Sampling and Storage
+### Isolation Process
+
+## RNA Sequencing
+
+### FASTq file quality control
+### FASTq file trimming
+### Alignment to Genome
+### R Matrix Data Analysis
+
+## real-time Polymerase Chain Reaction (rtPCR)
+
+### cDNA Preparation
+### Master Mix
+### Primer Preparation
+### Plating
+
+Our website is currently under construction; please excuse the mess. _~last updated 8/30/2019~_

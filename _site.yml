@@ -16,5 +16,9 @@ navbar:
   left:
     - text: "Home"
       href: 'index.html'
+    - text: "Publications"
+      href: 'publications.html'
+    - text: "Laboratory Techniques"
+      href: 'labtech.html'
     - text: "About"
       href: 'about.html'
