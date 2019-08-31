@@ -11,7 +11,7 @@ output: html_document
 </div>
 
 <div class = "col-md-6">
-```{r vetmedLogo, out.width='100%', echo=FALSE}
+```{r vetmedLogo, fig.align='center', out.width='100%', echo=FALSE}
 knitr::include_graphics("./UGA_CVM_logo.jpg")
 ```
 </div>
