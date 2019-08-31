@@ -5,8 +5,12 @@ output:
     include:
       after_body: ./docs/footer.html
 ---
+<br>
 
 ##### **Selected Publications**
+
+<br>
+
 Banovic F, Olivry T, Bazzle L, Tobias JR, Atlee B, Zabel S, Okunaka N and Linder KE. Clinical and Microscopic Characteristics of Canine Toxic Epidermal Necrolysis. Veterinary Pathology 2015; 25:321-330.
 
 Olivry T, Rossi MA, Banovic F and Linder KE. Mucocutaneous lupus erythematosus in dogs (21 cases). Veterinary Dermatology 2015; 26: 256–e55.

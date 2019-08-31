@@ -25,14 +25,26 @@ knitr::include_graphics("./DNA_AB.jpg")
 
 ## RNA Sequencing
 
+<br>
+
 ### FASTq file quality control
+
 ### FASTq file trimming
+
 ### Alignment to Genome
+
 ### R Matrix Data Analysis
+
+<br>
 
 ## real-time Polymerase Chain Reaction (rtPCR)
 
+<br>
+
 ### cDNA Preparation
+
 ### Master Mix
+
 ### Primer Preparation
+
 ### Plating
