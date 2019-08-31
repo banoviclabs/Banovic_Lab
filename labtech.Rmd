@@ -6,14 +6,22 @@ output:
       after_body: ./docs/footer.html
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+<div class = "row">
 
+<div class = "col-md-6">
 ## RNA Isolation
 
 ### Tissue Sampling and Storage
+
 ### Isolation Process
+</div>
+
+<div class = "col-md-6">
+```{r DNA, out.width='40%', fig.align='center', echo=FALSE}
+knitr::include_graphics("./DNA_AB.jpg")
+```
+</div>
+</div>
 
 ## RNA Sequencing
 

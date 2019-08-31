@@ -7,8 +7,6 @@ output:
     
 ---
 
-
-
 ```{r UGA_itchybulldog, out.width='55%', fig.align='center', echo=FALSE}
 knitr::include_graphics("./UGA_itchyBulldog.jpg")
 ```
