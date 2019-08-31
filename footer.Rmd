@@ -1,5 +1,6 @@
 ---
-output: html_document
+output: 
+  html_document
 ---
 
 <div class = "row">
@@ -12,7 +13,7 @@ output: html_document
 
 <div class = "col-md-6">
 ```{r vetmedLogo, fig.align='center', out.width='100%', echo=FALSE}
-knitr::include_graphics("./UGA_CVM_logo.jpg")
+knitr::include_graphics("https://github.com/banoviclabs/Banovic_Lab/blob/master/UGA_CVM_logo.JPG?raw=true")
 ```
 </div>
 </div>
