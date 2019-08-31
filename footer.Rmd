@@ -1,0 +1,20 @@
+---
+output: html_document
+---
+
+<div class = "row">
+
+<div class = "col-md-6">
+<hr />
+<p style="text-align: center;"><a href="https://banoviclabs.github.io/Banovic_Lab/">Banovic Lab</a></p>
+<p style="text-align: center;"><span style="color: #808080;"><em>alblub@uga.edu</em></span></p>
+</div>
+
+<div class = "col-md-6">
+```{r vetmedLogo, out.width='100%', echo=FALSE}
+knitr::include_graphics("./UGA_CVM_logo.jpg")
+```
+</div>
+</div>
+
+<p style="text-align: center;"><span style="color: #808080;"><em>Our website is currently under construction; please excuse the mess. _~last updated 8/31/2019~_</em></span></p>

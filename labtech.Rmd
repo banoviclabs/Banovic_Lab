@@ -1,6 +1,9 @@
 ---
 title: "Laboratory Techniques"
-output: html_document
+output: 
+  html_document:
+    include:
+      after_body: ./docs/footer.html
 ---
 
 ```{r setup, include=FALSE}
@@ -25,5 +28,3 @@ knitr::opts_chunk$set(echo = FALSE)
 ### Master Mix
 ### Primer Preparation
 ### Plating
-
-Our website is currently under construction; please excuse the mess. _~last updated 8/30/2019~_

@@ -1,7 +1,9 @@
 ---
 title: "About"
 output: 
-  html_document
+  html_document:
+    include:
+      after_body: ./docs/footer.html
 ---
 
 ```{r setup, include=FALSE}
@@ -52,4 +54,3 @@ Banovic F, Koch S, Robson D, Jacob M, Olivry T. Deep pyoderma caused by Burkhold
 
 ### Contributors
 
-Our website is currently under construction; please excuse the mess. _~last updated 8/30/2019~_

@@ -1,4 +1,7 @@
 ---
 title: "Publications/Abstracts/Posters"
-output: html_document
+output: 
+  html_document:  
+    include:
+      after_body: ./docs/footer.html
 ---
