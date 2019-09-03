@@ -1,5 +1,5 @@
 ---
-title: "Publications/Abstracts/Posters"
+title: "Publications"
 output: 
   html_document:  
     include:
