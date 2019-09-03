@@ -12,39 +12,78 @@ output:
 ## RNA Isolation
 
 ### Tissue Sampling and Storage
+Small skin biopsies are placed into [RNAlater](https://www.thermofisher.com/us/en/home/brands/product-brand/rnalater.html?gclid=CjwKCAjw-7LrBRB6EiwAhh1yX5owMPgNyYuK0uBAWrw2u1AIdLdKdFAJg7shzsXeb04Nxb9EBd5vAxoCl_QQAvD_BwE&s_kwcid=AL!3652!3!352479661678!e!!g!!rnalater&ef_id=CjwKCAjw-7LrBRB6EiwAhh1yX5owMPgNyYuK0uBAWrw2u1AIdLdKdFAJg7shzsXeb04Nxb9EBd5vAxoCl_QQAvD_BwE:G:s&s_kwcid=AL!3652!3!352479661678!e!!g!!rnalater) immediately. The tissue is then frozen after having proper allowed time and temperature for full RNAlater absorption into cells of the tissue. Frozen tissue is then used for downstream analysis.
 
 ### Isolation Process
+Frozen tissues are pulverized and homogenized prior to using the [Qiagen miRNeasy RNA isolation kit](https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/mirna/mirneasy-mini-kit/#orderinginformation). Proper attention to the tissue sample, temperature of the tissue during isolation, centrifugation times and addition of proper reagents for the correct amount of time are all pivotal to producing pure, intact quality samples.  
+
+Our lab measures absorbancy for purity of isolated RNA and has an RNA integrity number (RIN) measured to ensure high quality integrity prior to using for downstream analysis.
+
 </div>
 
 <div class = "col-md-6">
 ```{r DNA, out.width='40%', fig.align='center', echo=FALSE}
 knitr::include_graphics("./DNA_AB.jpg")
 ```
+
+```{r miRNA, out.width='75%', fig.align='center', echo=FALSE}
+knitr::include_graphics("./miRNA_AB.jpg")
+```
 </div>
 </div>
+<br>
 
 ## RNA Sequencing
-
-<br>
-
+ 
+ 
 ### FASTq file quality control
+Original raw reads obtained through sequencing are evaulated for quality control (QC) using [fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Reads are evaulated for per base sequence quality, GC content, N content, sequence length distribution, duplication levels, overrepresentation, and Kmer content.  Based on QC, trimming is customized to reach acceptable quality accross all bases for further evaulation.
 
 ### FASTq file trimming
+Trimming of reads is performed to remove trailing read ends and identified shortcomings in the quality of reads from QC. Our lab uses [Trimmomatic](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/) for flexibility of trimming. After trimming, reads are evaluated for QC again prior to genome alignment, ensuring all samples are appropriate for downstream use. 
 
 ### Alignment to Genome
+Genome alignment is performed through [Tophat](https://ccb.jhu.edu/software/tophat/manual.shtml) or [HiSat2](https://ccb.jhu.edu/software/hisat2/index.shtml) based on the genome available and the resulting mapping alignment reached. If the genome does not already have a full recent index available, [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) is used for indexing. Finally, [Picard tools](http://broadinstitute.github.io/picard/) allows indexing and alignment to occur between multiple file formats, including SAM and BAM files (readable text and binary written files, respectively).
 
-### R Matrix Data Analysis
+Fully mapped reads have a proper count matrix and FPKM (frames per kilobase million) matrix generated. Alignment summaries are reviewed for concordant and disconcordant rates of alignment, unpaired read rates, and overall alignment rate. Many of our samples reach up to 85-90% proper alignment rate.
 
-<br>
+### Differential Expression (DE)
+[R](https://cran.r-project.org/) matrix data analysis for raw counts and [Cuffdiff](https://software.broadinstitute.org/cancer/software/genepattern/modules/docs/Cuffdiff/7) for FPKMs are used for DE. Multiple algorithms are used for separate DE to ensure both read counts and FPKMs reach similar DE results in terms of final gene statistical significance (using an adjusted p-value- False Discovery Rate (FDR)) and fold change (FC). 
+
+Matrices are evaulated for quality with [arrayQualityMetrics](https://bioconductor.org/packages/release/bioc/manuals/arrayQualityMetrics/man/arrayQualityMetrics.pdf). Group sample relations (similar sequence count sizes, intensity distributions, etc.) help determine outliers at this point for the samples being studied. 
+
+Principal Component Analysis (PCA) is preliminarily performed in the previous package, but further PCA is done during data matrix analysis and is plotted up to the 3rd prinipal component used 3d mapping techniques in [scatterplot3d](https://cran.r-project.org/web/packages/scatterplot3d/index.html).
+
+Final DE is obtained using the [DESeq package](https://bioconductor.org/packages/release/bioc/vignettes/DESeq/inst/doc/DESeq.pdf) and the [edgeR package](https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf) for raw count matrices. 
+
+### Pathway Analysis
+Final cellular pathway analysis is similar to DE in the sense that multiple different programs/resources are used for data visualization and understanding. Pathway analysis reveals cellular interactions that are significant to the upregulated and downregulated genes found, allowing targeted understanding of the disease being studied.
+
+Our lab utilizes [Metacore](http://health.library.emory.edu/resources/software/genomic-tools/metacore.html), a proprietary manually curated database with up to date peer-reviewed published previous data. 
+
+Other databases that are available to the public are also utilitzed for comparison and understanding, including [DAVID](https://david.ncifcrf.gov/), [MSigDB](http://software.broadinstitute.org/gsea/msigdb), and [XGR](https://cran.r-project.org/web/packages/XGR/index.html). 
+
+### Gene Set Variation Analysis (GSVA)
+[GSVA](https://bioconductor.org/packages/release/bioc/vignettes/GSVA/inst/doc/GSVA.pdf) is another tool in downstream pathway analysis that is of great benefit, as the phenotypic differences between groups in DE are disregarded for enrichment scoring in the matrix. Final enrichment scores allow unbiased visualization of differences between chosen groups of genes in phenotype comparisons.
+
+The gene sets of particular interest in our lab are those of known immunological pathways, including Th1, Th2, Th17, Th22, and others depending on the interest of the disease. Our gene sets have been curated from coordination with human researchers on those genes of interest in each immunological pathway. Proper identification of the corresponding homologous or othologous gene provides use in the specific species of interest. [BiomaRt](https://www.bioconductor.org/packages/devel/bioc/vignettes/biomaRt/inst/doc/biomaRt.html) is invaluable in this process.
 
 ## real-time Polymerase Chain Reaction (rtPCR)
 
 <br>
 
 ### cDNA Preparation
+Complimentary DNA is generated from isolated RNA using [qScript](https://www.quantabio.com/qscript-cdna-supermix). Isolated RNA is diluted with molecular grade, RNAse and DNAse free water during qScript addition to ensure all cDNA generated is in the same concentration between all samples. Often RNA isolated is in different concentrations per sample, making this critical for quality PCR results.
 
-### Master Mix
 
 ### Primer Preparation
+Primers are determined for rtPCR through identification of the mRNA corresponding accession number in the [NCBI database](https://www.ncbi.nlm.nih.gov/nucleotide/). 
+
+Sequences are blasted for confirmed identification of the sequence portions used in the primer. Forward and reverse primers are decided based on differences of melting and annealing temperature, GC content, sequence lengths, and primer dimer potential. The program [Beacon Designer](http://www.premierbiosoft.com/molecular_beacons/) makes the process streamlined and convenient.
+
+### Master Mix
+Master mix includes [PerfeCTa SYBR green fastmix](https://www.quantabio.com/perfecta-sybr-green-fastmix) and primer at proper proportion for plating. SYBR green contains proprietary buffers, stabilizers, SYBR green fluorphores, and Taq DNA polymerase to allow optimal thermal cycling conditions and SYBR green flurophore detection.
 
 ### Plating
+cDNA is added to each well containing added master mix in the proper proportion to acheive the best results. Plates are analyzed using the [BioRad CFX96 thermal cycler](https://www.bio-rad.com/en-us/product/cfx96-touch-real-time-pcr-detection-system?ID=LJB1YU15&WT.mc_id=170125003024&WT.srch=1&WT.knsh_id=60014904-4db5-4f86-982f-60003e6a8abf&gclid=CjwKCAjwnrjrBRAMEiwAXsCc4_bsVEv55HCLPqqbKhapaqesYzmqyPp-dMwSFW0Tv7xs8H-oOZxHoBoCFLMQAvD_BwE) with a reflective protocol of the necessary annealing temperatures of each primer of interest.
+

@@ -304,27 +304,49 @@ $(document).ready(function () {
 <div class="col-md-6">
 <h2 id="rna-isolation">RNA Isolation</h2>
 <h3 id="tissue-sampling-and-storage">Tissue Sampling and Storage</h3>
+<p>Small skin biopsies are placed into <a href="https://www.thermofisher.com/us/en/home/brands/product-brand/rnalater.html?gclid=CjwKCAjw-7LrBRB6EiwAhh1yX5owMPgNyYuK0uBAWrw2u1AIdLdKdFAJg7shzsXeb04Nxb9EBd5vAxoCl_QQAvD_BwE&amp;s_kwcid=AL!3652!3!352479661678!e!!g!!rnalater&amp;ef_id=CjwKCAjw-7LrBRB6EiwAhh1yX5owMPgNyYuK0uBAWrw2u1AIdLdKdFAJg7shzsXeb04Nxb9EBd5vAxoCl_QQAvD_BwE:G:s&amp;s_kwcid=AL!3652!3!352479661678!e!!g!!rnalater">RNAlater</a> immediately. The tissue is then frozen after having proper allowed time and temperature for full RNAlater absorption into cells of the tissue. Frozen tissue is then used for downstream analysis.</p>
 <h3 id="isolation-process">Isolation Process</h3>
+<p>Frozen tissues are pulverized and homogenized prior to using the <a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/mirna/mirneasy-mini-kit/#orderinginformation">Qiagen miRNeasy RNA isolation kit</a>. Proper attention to the tissue sample, temperature of the tissue during isolation, centrifugation times and addition of proper reagents for the correct amount of time are all pivotal to producing pure, intact quality samples.</p>
+<p>Our lab measures absorbancy for purity of isolated RNA and has an RNA integrity number (RIN) measured to ensure high quality integrity prior to using for downstream analysis.</p>
 </div>
 <div class="col-md-6">
 <p><img src="DNA_AB.JPG" width="40%" style="display: block; margin: auto;" /></p>
+<p><img src="miRNA_AB.jpg" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
+<p><br></p>
 <div id="rna-sequencing" class="section level2">
 <h2>RNA Sequencing</h2>
-<p><br></p>
 <div id="fastq-file-quality-control" class="section level3">
 <h3>FASTq file quality control</h3>
+<p>Original raw reads obtained through sequencing are evaulated for quality control (QC) using <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a>. Reads are evaulated for per base sequence quality, GC content, N content, sequence length distribution, duplication levels, overrepresentation, and Kmer content. Based on QC, trimming is customized to reach acceptable quality accross all bases for further evaulation.</p>
 </div>
 <div id="fastq-file-trimming" class="section level3">
 <h3>FASTq file trimming</h3>
+<p>Trimming of reads is performed to remove trailing read ends and identified shortcomings in the quality of reads from QC. Our lab uses <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/">Trimmomatic</a> for flexibility of trimming. After trimming, reads are evaluated for QC again prior to genome alignment, ensuring all samples are appropriate for downstream use.</p>
 </div>
 <div id="alignment-to-genome" class="section level3">
 <h3>Alignment to Genome</h3>
+<p>Genome alignment is performed through <a href="https://ccb.jhu.edu/software/tophat/manual.shtml">Tophat</a> or <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">HiSat2</a> based on the genome available and the resulting mapping alignment reached. If the genome does not already have a full recent index available, <a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">Bowtie2</a> is used for indexing. Finally, <a href="http://broadinstitute.github.io/picard/">Picard tools</a> allows indexing and alignment to occur between multiple file formats, including SAM and BAM files (readable text and binary written files, respectively).</p>
+<p>Fully mapped reads have a proper count matrix and FPKM (frames per kilobase million) matrix generated. Alignment summaries are reviewed for concordant and disconcordant rates of alignment, unpaired read rates, and overall alignment rate. Many of our samples reach up to 85-90% proper alignment rate.</p>
 </div>
-<div id="r-matrix-data-analysis" class="section level3">
-<h3>R Matrix Data Analysis</h3>
-<p><br></p>
+<div id="differential-expression-de" class="section level3">
+<h3>Differential Expression (DE)</h3>
+<p><a href="https://cran.r-project.org/">R</a> matrix data analysis for raw counts and <a href="https://software.broadinstitute.org/cancer/software/genepattern/modules/docs/Cuffdiff/7">Cuffdiff</a> for FPKMs are used for DE. Multiple algorithms are used for separate DE to ensure both read counts and FPKMs reach similar DE results in terms of final gene statistical significance (using an adjusted p-value- False Discovery Rate (FDR)) and fold change (FC).</p>
+<p>Matrices are evaulated for quality with <a href="https://bioconductor.org/packages/release/bioc/manuals/arrayQualityMetrics/man/arrayQualityMetrics.pdf">arrayQualityMetrics</a>. Group sample relations (similar sequence count sizes, intensity distributions, etc.) help determine outliers at this point for the samples being studied.</p>
+<p>Principal Component Analysis (PCA) is preliminarily performed in the previous package, but further PCA is done during data matrix analysis and is plotted up to the 3rd prinipal component used 3d mapping techniques in <a href="https://cran.r-project.org/web/packages/scatterplot3d/index.html">scatterplot3d</a>.</p>
+<p>Final DE is obtained using the <a href="https://bioconductor.org/packages/release/bioc/vignettes/DESeq/inst/doc/DESeq.pdf">DESeq package</a> and the <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/edgeR/inst/doc/edgeRUsersGuide.pdf">edgeR package</a> for raw count matrices.</p>
+</div>
+<div id="pathway-analysis" class="section level3">
+<h3>Pathway Analysis</h3>
+<p>Final cellular pathway analysis is similar to DE in the sense that multiple different programs/resources are used for data visualization and understanding. Pathway analysis reveals cellular interactions that are significant to the upregulated and downregulated genes found, allowing targeted understanding of the disease being studied.</p>
+<p>Our lab utilizes <a href="http://health.library.emory.edu/resources/software/genomic-tools/metacore.html">Metacore</a>, a proprietary manually curated database with up to date peer-reviewed published previous data.</p>
+<p>Other databases that are available to the public are also utilitzed for comparison and understanding, including <a href="https://david.ncifcrf.gov/">DAVID</a>, <a href="http://software.broadinstitute.org/gsea/msigdb">MSigDB</a>, and <a href="https://cran.r-project.org/web/packages/XGR/index.html">XGR</a>.</p>
+</div>
+<div id="gene-set-variation-analysis-gsva" class="section level3">
+<h3>Gene Set Variation Analysis (GSVA)</h3>
+<p><a href="https://bioconductor.org/packages/release/bioc/vignettes/GSVA/inst/doc/GSVA.pdf">GSVA</a> is another tool in downstream pathway analysis that is of great benefit, as the phenotypic differences between groups in DE are disregarded for enrichment scoring in the matrix. Final enrichment scores allow unbiased visualization of differences between chosen groups of genes in phenotype comparisons.</p>
+<p>The gene sets of particular interest in our lab are those of known immunological pathways, including Th1, Th2, Th17, Th22, and others depending on the interest of the disease. Our gene sets have been curated from coordination with human researchers on those genes of interest in each immunological pathway. Proper identification of the corresponding homologous or othologous gene provides use in the specific species of interest. <a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/biomaRt/inst/doc/biomaRt.html">BiomaRt</a> is invaluable in this process.</p>
 </div>
 </div>
 <div id="real-time-polymerase-chain-reaction-rtpcr" class="section level2">
@@ -332,15 +354,20 @@ $(document).ready(function () {
 <p><br></p>
 <div id="cdna-preparation" class="section level3">
 <h3>cDNA Preparation</h3>
-</div>
-<div id="master-mix" class="section level3">
-<h3>Master Mix</h3>
+<p>Complimentary DNA is generated from isolated RNA using <a href="https://www.quantabio.com/qscript-cdna-supermix">qScript</a>. Isolated RNA is diluted with molecular grade, RNAse and DNAse free water during qScript addition to ensure all cDNA generated is in the same concentration between all samples. Often RNA isolated is in different concentrations per sample, making this critical for quality PCR results.</p>
 </div>
 <div id="primer-preparation" class="section level3">
 <h3>Primer Preparation</h3>
+<p>Primers are determined for rtPCR through identification of the mRNA corresponding accession number in the <a href="https://www.ncbi.nlm.nih.gov/nucleotide/">NCBI database</a>.</p>
+<p>Sequences are blasted for confirmed identification of the sequence portions used in the primer. Forward and reverse primers are decided based on differences of melting and annealing temperature, GC content, sequence lengths, and primer dimer potential. The program <a href="http://www.premierbiosoft.com/molecular_beacons/">Beacon Designer</a> makes the process streamlined and convenient.</p>
+</div>
+<div id="master-mix" class="section level3">
+<h3>Master Mix</h3>
+<p>Master mix includes <a href="https://www.quantabio.com/perfecta-sybr-green-fastmix">PerfeCTa SYBR green fastmix</a> and primer at proper proportion for plating. SYBR green contains proprietary buffers, stabilizers, SYBR green fluorphores, and Taq DNA polymerase to allow optimal thermal cycling conditions and SYBR green flurophore detection.</p>
 </div>
 <div id="plating" class="section level3">
 <h3>Plating</h3>
+<p>cDNA is added to each well containing added master mix in the proper proportion to acheive the best results. Plates are analyzed using the <a href="https://www.bio-rad.com/en-us/product/cfx96-touch-real-time-pcr-detection-system?ID=LJB1YU15&amp;WT.mc_id=170125003024&amp;WT.srch=1&amp;WT.knsh_id=60014904-4db5-4f86-982f-60003e6a8abf&amp;gclid=CjwKCAjwnrjrBRAMEiwAXsCc4_bsVEv55HCLPqqbKhapaqesYzmqyPp-dMwSFW0Tv7xs8H-oOZxHoBoCFLMQAvD_BwE">BioRad CFX96 thermal cycler</a> with a reflective protocol of the necessary annealing temperatures of each primer of interest.</p>
 </div>
 </div>
 

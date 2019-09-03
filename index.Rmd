@@ -11,7 +11,7 @@ output:
 knitr::include_graphics("./UGA_itchyBulldog.jpg")
 ```
 
-### Thank you for visiting the Banovic Labs Website: a research lab in the [Small Animal Medicine and Surgery (SAMS) department of the University of Georgia (UGA) College of Veterinary Medicine (CVM)](https://vet.uga.edu/education/academic-departments/small-animal-medicine-and-surgery/) in Athens Georgia, USA
+### Thank you for visiting the Banovic Lab Website: a research lab in the [Small Animal Medicine and Surgery (SAMS) department of the University of Georgia (UGA) College of Veterinary Medicine (CVM)](https://vet.uga.edu/education/academic-departments/small-animal-medicine-and-surgery/) in Athens Georgia, USA
 <br>
 
 ### Our lab focuses on dermatological studies for **many** species, from murine to equine, feline, canine, and including human. 
