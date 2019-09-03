@@ -70,8 +70,6 @@ The gene sets of particular interest in our lab are those of known immunological
 
 ## real-time Polymerase Chain Reaction (rtPCR)
 
-<br>
-
 ### cDNA Preparation
 Complimentary DNA is generated from isolated RNA using [qScript](https://www.quantabio.com/qscript-cdna-supermix). Isolated RNA is diluted with molecular grade, RNAse and DNAse free water during qScript addition to ensure all cDNA generated is in the same concentration between all samples. Often RNA isolated is in different concentrations per sample, making this critical for quality PCR results.
 
