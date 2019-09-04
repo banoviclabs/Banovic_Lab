@@ -317,6 +317,7 @@ $(document).ready(function () {
 <p><br></p>
 <div id="rna-sequencing" class="section level2">
 <h2>RNA Sequencing</h2>
+<p><br></p>
 <div id="fastq-file-quality-control" class="section level3">
 <h3>FASTq file quality control</h3>
 <p>Original raw reads obtained through sequencing are evaulated for quality control (QC) using <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastqc</a>. Reads are evaulated for per base sequence quality, GC content, N content, sequence length distribution, duplication levels, overrepresentation, and Kmer content. Based on QC, trimming is customized to reach acceptable quality accross all bases for further evaulation.</p>
@@ -347,10 +348,12 @@ $(document).ready(function () {
 <h3>Gene Set Variation Analysis (GSVA)</h3>
 <p><a href="https://bioconductor.org/packages/release/bioc/vignettes/GSVA/inst/doc/GSVA.pdf">GSVA</a> is another tool in downstream pathway analysis that is of great benefit, as the phenotypic differences between groups in DE are disregarded for enrichment scoring in the matrix. Final enrichment scores allow unbiased visualization of differences between chosen groups of genes in phenotype comparisons.</p>
 <p>The gene sets of particular interest in our lab are those of known immunological pathways, including Th1, Th2, Th17, Th22, and others depending on the interest of the disease. Our gene sets have been curated from coordination with human researchers on those genes of interest in each immunological pathway. Proper identification of the corresponding homologous or othologous gene provides use in the specific species of interest. <a href="https://www.bioconductor.org/packages/devel/bioc/vignettes/biomaRt/inst/doc/biomaRt.html">BiomaRt</a> is invaluable in this process.</p>
+<p><br> <br></p>
 </div>
 </div>
 <div id="real-time-polymerase-chain-reaction-rtpcr" class="section level2">
 <h2>real-time Polymerase Chain Reaction (rtPCR)</h2>
+<p><br></p>
 <div id="cdna-preparation" class="section level3">
 <h3>cDNA Preparation</h3>
 <p>Complimentary DNA is generated from isolated RNA using <a href="https://www.quantabio.com/qscript-cdna-supermix">qScript</a>. Isolated RNA is diluted with molecular grade, RNAse and DNAse free water during qScript addition to ensure all cDNA generated is in the same concentration between all samples. Often RNA isolated is in different concentrations per sample, making this critical for quality PCR results.</p>
@@ -367,6 +370,7 @@ $(document).ready(function () {
 <div id="plating" class="section level3">
 <h3>Plating</h3>
 <p>cDNA is added to each well containing added master mix in the proper proportion to acheive the best results. Plates are analyzed using the <a href="https://www.bio-rad.com/en-us/product/cfx96-touch-real-time-pcr-detection-system?ID=LJB1YU15&amp;WT.mc_id=170125003024&amp;WT.srch=1&amp;WT.knsh_id=60014904-4db5-4f86-982f-60003e6a8abf&amp;gclid=CjwKCAjwnrjrBRAMEiwAXsCc4_bsVEv55HCLPqqbKhapaqesYzmqyPp-dMwSFW0Tv7xs8H-oOZxHoBoCFLMQAvD_BwE">BioRad CFX96 thermal cycler</a> with a reflective protocol of the necessary annealing temperatures of each primer of interest.</p>
+<p><br></p>
 </div>
 </div>
 
